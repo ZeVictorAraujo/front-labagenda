@@ -6,7 +6,7 @@
  - Preferência de Merge (main) para contenção de falhas;
  - Merge no Master após solucionado;
 
-#Tecnologias
+# Tecnologias
  - ReactJS;
  - TailwindCSS;
 
