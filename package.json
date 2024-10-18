@@ -13,7 +13,7 @@
     "fullcalendar-scheduler": "^6.1.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "router-dom": "^3.0.1"
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
