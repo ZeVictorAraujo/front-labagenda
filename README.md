@@ -10,6 +10,11 @@
  - ReactJS;
  - TailwindCSS;
 
+# Comando NPM
+ - npm install -D tailwindcss postcss autoprefixer
+ - npx tailwindcss init -p
+ 
+
 # Responsáveis
  - [Cezar Nogueira](https://github.com/CezarNogueira)
  - [Victor Araujo](https://github.com/ZeVictorAraujo)
