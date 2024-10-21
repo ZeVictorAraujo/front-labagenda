@@ -1,7 +1,7 @@
 import './App.css'
 import Button from './components/Button/Button'
 
-function App() {
+export default function App() {
 
   return (
     <div className='app-container'>
@@ -9,5 +9,3 @@ function App() {
     </div>
   )
 }
-
-export default App
