@@ -3,32 +3,26 @@ import { tv } from 'tailwind-variants';
 export default function Button() {
 
     const button = tv({
-        base: 'font-medium bg-blue-500 text-white rounded-full active:opacity-80',
+        base: 'font-medium bg-blue-600 text-white rounded-md active:opacity-80',
         variants: {
           color: {
-            primary: 'bg-blue-500 text-white',
-            secondary: 'bg-purple-500 text-white'
+            primary: 'bg-blue-600 text-white',
+            edit: 'bg-yellow-500 text-white',
+            delete: 'bg-red-500 text-white'
           },
           size: {
-            sm: 'text-sm',
-            md: 'text-base',
+            normal: 'px-3 py-2',
             lg: 'px-4 py-3 text-lg'
           }
         },
-        compoundVariants: [
-          {
-            size: ['sm', 'md'],
-            class: 'px-3 py-1'
-          }
-        ],
         defaultVariants: {
-          size: 'md',
+          size: 'normal',
           color: 'primary'
         }
       });
 
     return (
-        <button className={button({ size: 'sm', color: 'secondary' })}>
+        <button className={button({ size: 'normal', color: 'primary' })}>
             Click me
         </button>
     );

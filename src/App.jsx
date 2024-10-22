@@ -1,9 +1,11 @@
 import './App.css';
+import Button from './components/Button/Button';
 
 export default function App() {
 
   return (
-    
-      <h1 className='text-2xl font-bold underline'>Olá</h1>
+    <div className='app-container'>
+      <Button />
+    </div>
   );
 }
