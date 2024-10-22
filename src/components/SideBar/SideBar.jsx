@@ -49,12 +49,12 @@ const menuItems = [
           {
             menuItems.map((item, index) => {
               return (
-                <li key={index} className='px-3 py-3 my-2 hover:bg-blue-800 rounded-md duration-300 cursor-pointer flex flex-col gap-2 items-center relative group'>
+                <li key={index} className='px-3 py-7 my-2 hover:bg-blue-800 rounded-md duration-300 cursor-pointer flex flex-col gap-2 items-center relative group'>
                   <div>{item.icons}</div>
-                  <p className='mt-2 text-sm text-center font-bold'>{item.label}</p>
-                  {/* <p className={`absolute left-32 shadow-md rounded-md
+                  {/*<p className='mt-2 text-sm text-center font-bold'>{item.label}</p> */}
+                  <p className={`absolute left-32 shadow-md rounded-md
                    w-0 p-0 text-black bg-white duration-100 overflow-hidden group-hover:w-fit group-hover:p-2 group-hover:left-16
-                  `}>{item.label}</p>*/}
+                  `}>{item.label}</p>
                 </li>
               )
             })
