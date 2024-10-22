@@ -1,9 +1,15 @@
 import './App.css';
+import Sidebar from './components/SideBar/SideBar.jsx';
 
 export default function App() {
 
   return (
     
-      <h1 className='text-2xl font-bold underline'>Olá</h1>
+    <div>
+      <Sidebar />
+    
+      <img src='Logo.svg'></img>
+    </div>
+
   );
 }
