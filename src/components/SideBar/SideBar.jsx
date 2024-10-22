@@ -1,51 +1,46 @@
 import React, { useState } from 'react'
-import Logo from '../Logo/Logo.jsx';
 
-import { MdMenuOpen } from "react-icons/md";
-import { IoHomeOutline } from "react-icons/io5";
-import { FaProductHunt } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
+
+import { FaNewspaper } from "react-icons/fa6";
+import { FaCalendar } from "react-icons/fa";
 import { TbReportSearch } from "react-icons/tb";
-import { IoLogoBuffer } from "react-icons/io";
-import { CiSettings } from "react-icons/ci";
-import { MdOutlineDashboard } from "react-icons/md";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import { FaUserPlus } from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
+
 
 const menuItems = [
     {
-      icons: <IoHomeOutline size={36} />,
-      label: 'Home'
+      icons: <FaNewspaper size={36} />,
+      label: 'Mural'
     },
     {
-      icons: <FaProductHunt size={36} />,
-      label: 'Products'
-    },
-    {
-      icons: <MdOutlineDashboard size={36} />,
-      label: 'Dashboard'
-    },
-    {
-      icons: <CiSettings size={36} />,
-      label: 'Setting'
-    },
-    {
-      icons: <IoLogoBuffer size={36} />,
-      label: 'Log'
+      icons: <FaCalendar size={36} />,
+      label: 'Calendário'
     },
     {
       icons: <TbReportSearch size={36} />,
-      label: 'Report'
-    }
+      label: 'Relatorio'
+    },
+    {
+      icons: <MdOutlineSupportAgent size={36} />,
+      label: 'Suporte'
+    },
+    {
+      icons: <FaUserPlus size={36} />,
+      label: 'Registrar'
+    },
   ]
 
   export default function Sidebar() {
   
     return (
-      <nav className={`shadow-md h-screen p-2 flex flex-col duration-500 bg-blue-600 text-white ${open ? 'w-60' : 'w-16'}`}>
+      <nav className={`w-20 shadow-md h-screen p-2 flex flex-col duration-500 bg-blue-700 text-white`}>
   
         {/* Header */}
-        <div className=' px-3 py-2 h-20 flex justify-between items-center'>
-          <img src={Logo}/>
-          <div><MdMenuOpen size={34} className={` duration-500 cursor-pointer ${!open && ' rotate-180'}`} onClick={() => setOpen(!open)} /></div>
+        <div className='px-3 py-2 h-20 flex justify-between'>
+          <IoMenu size={36}/>
         </div>
   
         {/* Body */}
@@ -54,12 +49,12 @@ const menuItems = [
           {
             menuItems.map((item, index) => {
               return (
-                <li key={index} className='px-3 py-2 my-2 hover:bg-blue-800 rounded-md duration-300 cursor-pointer flex gap-2 items-center relative group'>
+                <li key={index} className='px-3 py-3 my-2 hover:bg-blue-800 rounded-md duration-300 cursor-pointer flex flex-col gap-2 items-center relative group'>
                   <div>{item.icons}</div>
-                  <p className={`${!open && 'w-0 translate-x-24'} duration-500 overflow-hidden`}>{item.label}</p>
-                  <p className={`${open && 'hidden'} absolute left-32 shadow-md rounded-md
+                  <p className='mt-2 text-sm text-center font-bold'>{item.label}</p>
+                  {/* <p className={`absolute left-32 shadow-md rounded-md
                    w-0 p-0 text-black bg-white duration-100 overflow-hidden group-hover:w-fit group-hover:p-2 group-hover:left-16
-                  `}>{item.label}</p>
+                  `}>{item.label}</p>*/}
                 </li>
               )
             })
@@ -68,10 +63,7 @@ const menuItems = [
         {/* footer */}
         <div className='flex items-center gap-2 px-3 py-2'>
           <div><FaUserCircle size={30} /></div>
-          <div className={`leading-5 ${!open && 'w-0 translate-x-24'} duration-500 overflow-hidden`}>
-            <p>Saheb</p>
-            <span className='text-xs'>saheb@gmail.com</span>
-  
+          <div className={`leading-5 duration-500 overflow-hidden`}>
           </div>
         </div>
   

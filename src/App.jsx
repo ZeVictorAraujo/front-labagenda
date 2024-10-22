@@ -7,8 +7,6 @@ export default function App() {
     
     <div>
       <Sidebar />
-    
-      <img src='Logo.svg'></img>
     </div>
 
   );
