@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-export default function Button() {
+export default function Button({ children, size = 'normal', color = 'primary' }) {
 
     const button = tv({
         base: 'font-medium bg-blue-600 text-white rounded-md active:opacity-80',
@@ -23,7 +23,7 @@ export default function Button() {
 
     return (
         <button className={button({ size: 'normal', color: 'primary' })}>
-            Click me
+            {children}
         </button>
     );
 }
