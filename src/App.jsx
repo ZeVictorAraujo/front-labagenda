@@ -1,9 +1,9 @@
-import './App.css';
+import Sidebar from './components/SideBar/SideBar'
+import FullCalendar from './components/FullCalendar/FullCalendar'
 
-export default function App() {
-
+function App() {
   return (
-    <div className='app-container'>
-    </div>
+    
+      <h1 className='text-2xl font-bold underline'>Olá</h1>
   );
 }
