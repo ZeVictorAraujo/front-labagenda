@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Sidebar from './components/SideBar/SideBar.jsx';
+import Banner from './components/Banner/Banner.jsx'
 
 export default function App() {
 
