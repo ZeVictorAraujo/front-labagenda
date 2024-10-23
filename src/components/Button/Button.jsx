@@ -22,7 +22,7 @@ export default function Button({ children, size = 'normal', color = 'primary' })
       });
 
     return (
-        <button className={button({ size: 'normal', color: 'primary' })}>
+        <button className={button({ size, color })}>
             {children}
         </button>
     );
