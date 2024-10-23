@@ -1,5 +1,5 @@
 import Sidebar from './components/SideBar/SideBar'
-import Banner from './components/Banner/Banner'
+import FullCalendar from './components/FullCalendar/FullCalendar'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
 
       {/* Conteúdo Principal à Direita */}
       <div className="flex-1 bg-gray-100 p-6 overflow-auto">
-        < Banner />
+        <FullCalendar/>
       </div>
     </div>
   );
