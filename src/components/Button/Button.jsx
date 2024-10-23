@@ -20,7 +20,7 @@ export default function Button({ children, size = 'normal', color = 'primary' })
           color: 'primary'
         }
       });
-      // <Button size="normal" type="text">Click Me</button> <- Forma de chamar o Button
+      // <Button size="normal" color="primary" type="text">Click Me</button> <- Forma de chamar o Button
     return (
         <button className={button({ size, color })}>
             {children}
