@@ -13,8 +13,8 @@ export default function Usercard() {
     const { avatar, name, role } = card();
        
     return (
-        <Card size="lg" color="secondary">
-            <div className='w-full flex flex-row bg-transparent'>
+        <Card size="normal" color="secondary">
+            <div className='flex flex-row justify-between'>
                 <img
                     className={avatar()}
                     src="/intro-avatar.png"
