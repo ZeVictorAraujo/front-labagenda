@@ -12,7 +12,7 @@ export default function Card({ children, size = 'normal', color= 'primary' }) {
           },
           color: {
             primary: 'bg-sky-600',
-            secodary: 'bg-white',
+            secondary: 'bg-white',
             text: 'bg-gray-400',
             pop: 'bg-sky-600 opacity-80'
           }

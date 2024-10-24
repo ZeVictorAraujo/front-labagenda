@@ -1,4 +1,5 @@
 import Sidebar from './components/SideBar/SideBar'
+import Usercard from './components/Usercard/Usercard';
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
 
       {/* Conteúdo Principal à Direita */}
       <div className="flex-1 bg-gray-100 p-6 overflow-auto">
+        <Usercard />
       </div>
     </div>
   );
