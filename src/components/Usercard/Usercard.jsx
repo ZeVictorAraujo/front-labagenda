@@ -13,7 +13,7 @@ export default function Usercard() {
     const { avatar, name, role } = card();
        
     return (
-        <Card size="normal" color="secondary">
+        <Card size="normal" color="secondary" width="sm">
             <div className='flex flex-row justify-between'>
                 <img
                     className={avatar()}

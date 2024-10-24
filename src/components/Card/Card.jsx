@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-export default function Card({ children, size = 'normal', color= 'primary' }) {
+export default function Card({ children, size = 'normal', color= 'primary', width= 'auto' }) {
 
     const card = tv({
         base: 'font-medium bg-sky-600 text-black rounded-md',
