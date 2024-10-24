@@ -3,10 +3,10 @@ import { tv } from 'tailwind-variants';
 export default function Button({ children, size = 'normal', color = 'primary' }) {
 
     const button = tv({
-        base: 'font-medium bg-blue-600 text-white rounded-md active:opacity-80',
+        base: 'font-medium bg-blue-700 text-white rounded-md active:opacity-80',
         variants: {
           color: {
-            primary: 'bg-blue-600 text-white',
+            primary: 'bg-blue-700 text-white',
             edit: 'bg-yellow-500 text-white',
             delete: 'bg-red-500 text-white'
           },
