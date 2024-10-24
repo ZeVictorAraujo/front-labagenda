@@ -15,16 +15,24 @@ export default function Card({ children, size = 'normal', color= 'primary' }) {
             secondary: 'bg-white',
             text: 'bg-gray-400',
             pop: 'bg-sky-600 opacity-80'
-          }
+          },
+          width: {
+            auto: 'w-auto',
+            full: 'w-full',
+            sm: 'w-1/4',
+            md: 'w-1/2',
+            lg: 'w-3/4',
+        }
         },
         defaultVariants: {
           size: 'normal',
-          color: 'primary'
+          color: 'primary',
+          width: 'auto'
         }
       });
-      // <Card size="normal" color="primary"></Card> <- Forma de chamar o Span
+      // <Card size="normal" color="primary" width="auto"></Card> <- Forma de chamar o Card
     return (
-        <div className={card({ size, color })}>
+        <div className={card({ size, color, width })}>
             {children}
         </div>
     );
