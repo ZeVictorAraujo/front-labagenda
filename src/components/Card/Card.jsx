@@ -24,8 +24,8 @@ export default function Card({ children, size = 'normal', color= 'primary' }) {
       });
       // <Card size="normal" color="primary"></Card> <- Forma de chamar o Span
     return (
-        <card className={card({ size, color })}>
+        <div className={card({ size, color })}>
             {children}
-        </card>
+        </div>
     );
 }
