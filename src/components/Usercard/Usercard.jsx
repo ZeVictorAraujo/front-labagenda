@@ -2,11 +2,12 @@ import { tv } from 'tailwind-variants';
 import Card from '../Card/Card';
 import { IoMdCloseCircle } from "react-icons/io";
 import { MdEdit } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
 
 export default function Usercard() {
     const card = tv({
         slots: {
-            avatar:'w-16 rounded-full',
+            avatar:'flex justify-center items-center w-12 h-12 rounded-full bg-gray-300',
             name: 'text-sm',
             role: 'text-sm'
         }
@@ -17,11 +18,9 @@ export default function Usercard() {
     return (
         <Card size="normal" color="secondary" width="sm">
             <div className='flex flex-row justify-between'>
-                <img
-                    className={avatar()}
-                    src=""
-                    alt="foto de Perfil"
-                />
+                <div className={avatar()}>
+                    <FaUser size={24}/>
+                </div>
                 <div className='flex flex-col justify-between text-center'>
                         <div className={role()}>Cargo</div>
                         <div className={name()}>Nome de Perfil</div>
