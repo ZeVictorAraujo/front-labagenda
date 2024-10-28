@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-export default function Card({ children, size = 'normal', color= 'primary', width= 'auto' }) {
+export default function Card({ children, size = 'normal', color= 'primary', width= 'auto', height= 'auto' }) {
 
     const card = tv({
         base: 'font-medium bg-sky-600 text-black rounded-md',
@@ -22,7 +22,14 @@ export default function Card({ children, size = 'normal', color= 'primary', widt
             sm: 'w-1/4',
             md: 'w-1/2',
             lg: 'w-3/4',
-        }
+          },
+          height: {
+            auto: 'h-auto',
+            full: 'h-full',
+            sm: 'h-1/4',
+            md: 'h-1/2',
+            lg: 'h-3/4',
+          }
         },
         defaultVariants: {
           size: 'normal',
@@ -30,9 +37,9 @@ export default function Card({ children, size = 'normal', color= 'primary', widt
           width: 'auto'
         }
       });
-      // <Card size="normal" color="primary" width="auto"></Card> <- Forma de chamar o Card
+      // <Card size="normal" color="primary" width="auto" height="auto"></Card> <- Forma de chamar o Card
     return (
-        <div className={card({ size, color, width })}>
+        <div className={card({ size, color, width, height })}>
             {children}
         </div>
     );
