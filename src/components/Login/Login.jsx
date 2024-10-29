@@ -9,6 +9,7 @@ export default function Login() {
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
 
+    // Início do uso da API de autenticação
     const handleSubmit = async (e) => {
         e.preventDefault();
 
