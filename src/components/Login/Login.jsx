@@ -14,7 +14,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch("URL_DO_BACKEND/login", {
+            const response = await fetch("/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

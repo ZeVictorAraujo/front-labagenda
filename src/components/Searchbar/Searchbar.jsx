@@ -9,7 +9,7 @@ export default function Searchbar() {
     const fetchResults = async () => {
         if (searchTerm.length >= 3) {
             try {
-                const response = await fetch(`/api/search?query=${searchTerm}`);
+                const response = await fetch(`/installation/search?query=${searchTerm}`);
                 const data = await response.json();
                 setResults(data);
             } catch (error) {
