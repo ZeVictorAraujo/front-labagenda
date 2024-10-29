@@ -1,7 +1,19 @@
-export default function Logo() {
+import { tv } from 'tailwind-variants';
+
+const logoVariants = tv({
+    variants: {
+        type: {
+            primary: "Logo.svg",
+            secondary: "Logo-Black.svg",
+        },
+    },
+    defaultVariants: {
+        type: "primary",
+    },
+});
+
+export default function Logo({ type = "primary" }) {
     return (
-        <div className="logo-container">
-            <img src="Logo.svg" alt=""/>
-        </div>
-    )
+        <img src={logoVariants({ type })} alt="Logo" />
+    );
 }
