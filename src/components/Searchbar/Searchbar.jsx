@@ -6,18 +6,19 @@ export default function Searchbar() {
     const [searchTerm, setSearchTerm] = useState("");
     const [results, setResults] = useState([]);
 
-    useEffect(() => {
-        const fetchResults = async () => {
-            if (searchTerm.length >= 3) {
-                try {
+    const fetchResults = async () => {
+        if (searchTerm.length >= 3) {
+            try {
                 const response = await fetch(`/api/search?query=${searchTerm}`);
                 const data = await response.json();
                 setResults(data);
-                } catch (error) {
+            } catch (error) {
                 console.error("Erro ao buscar dados:", error);
-                }
             }
-        };
+        }
+    };
+
+    useEffect(() => {
 
         // Debounce(Limitar a quantidade de vezes que a função é executada) de 500ms antes de fazer a busca
         const debounceTimeout = setTimeout(fetchResults, 500);
@@ -33,17 +34,21 @@ export default function Searchbar() {
     return (
         <div className="flex w-96 rounded bg-white">
             <input 
-            id="search"
-            name="search"
-            className="w-full px-4 py-2 border-none outline-none focus:outline-none" 
-            size="normal" 
-            type="search"
-            value={searchTerm}
-            onChange={handleChange}
-            ph="Pesquisar" />
+                id="search"
+                name="search"
+                className="w-full px-4 py-2 border-none outline-none focus:outline-none" 
+                size="normal" 
+                type="search"
+                value={searchTerm}
+                onChange={handleChange}
+                ph="Pesquisar" 
+            />
 
-            <button className="m-2 px-2 py-2 hover:text-blue-800 duration-100">
-              <FaSearch />
+            <button 
+                className="m-2 px-2 py-2 hover:text-blue-800 duration-100"
+                onClick={fetchResults}
+            >
+                <FaSearch />
             </button>
 
             {/* Lista de resultados */}
