@@ -5,6 +5,7 @@ const logoVariants = tv({
         type: {
             primary: "Logo.svg",
             secondary: "Logo-Black.svg",
+            senai: "Logo-Senai.svg",
         },
     },
     defaultVariants: {
