@@ -37,7 +37,7 @@ export default function Login() {
     };
 
     return (
-            <Card size="normal" color="secondary" width="sm">
+            <Card size="normal" color="secondary" width="sm" height="md">
                 <div className="flex flex-col justify-center gap-12">
                     {/* Logo do Senai e Sistema */}
                     <div className="flex flex-col items-center justify-center gap-12">
