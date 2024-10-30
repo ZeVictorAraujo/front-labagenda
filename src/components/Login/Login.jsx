@@ -3,11 +3,17 @@ import Card from "../Card/Card";
 import Logo from "../Logo/Logo";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import { FaEye, FaEyeSlash } from "react-icons/fa"
 
 export default function Login() {
     const [rn, setRn] = useState("");
     const [senha, setSenha] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword)
+    }
 
     // Início do uso da API de autenticação
     const handleSubmit = async (e) => {
@@ -37,45 +43,55 @@ export default function Login() {
     };
 
     return (
-            <Card size="normal" color="secondary" width="sm" height="md">
-                <div className="flex flex-col justify-center gap-12">
-                    {/* Logo do Senai e Sistema */}
-                    <div className="flex flex-col items-center justify-center gap-12">
-                        <div className="flex itens-center justify-center w-3/4">
-                            <Logo type="senai"/>
-                        </div>
-                        <div className="flex items-center justify-center w-3/4">
-                            <Logo type="secondary"/>
-                        </div>
+        <Card size="normal" color="secondary" width="sm" height="md">
+            <div className="flex flex-col justify-center gap-12">
+                {/* Logo do Senai e Sistema */}
+                <div className="flex flex-col items-center justify-center gap-12">
+                    <div className="flex itens-center justify-center w-3/4">
+                        <Logo type="senai"/>
                     </div>
-                    {/* Formulario de Login */}
-                    <form action="POST" className="flex flex-col itens-center justify-center">
-                        <div className="flex flex-col itens-center justify-center py-2 px-16 gap-4">
+                    <div className="flex items-center justify-center w-3/4">
+                        <Logo type="secondary"/>
+                    </div>
+                </div>
+                {/* Formulario de Login */}
+                <form action="POST" className="flex flex-col itens-center justify-center">
+                    <div className="flex flex-col itens-center justify-center py-2 px-16 gap-4">
+                        <Input 
+                            size="normal" 
+                            type="text" 
+                            ph="RA" 
+                            id="ra" 
+                            name="rn"
+                            value={rn}
+                            onChange={(e) => setRn(e.target.value)}
+                        />
+                        <div className="flex relative">
                             <Input 
                                 size="normal" 
-                                type="text" 
-                                ph="RA" 
-                                id="ra" 
-                                name="rn"
-                                value={rn}
-                                onChange={(e) => setRn(e.target.value)}
-                            />
-                            <Input 
-                                size="normal" 
-                                type="password" 
+                                type={showPassword ? "text" : "password"}  
                                 ph="Senha" 
                                 id="senha" 
                                 name="senha"
                                 value={senha}
                                 onChange={(e) => setSenha(e.target.value)}
                             />
-                        </div>
-                        <div className="flex flex-col itens-center justify-center py-2 px-16">
-                            <Button size="lg" color="primary" type="submit">Entrar</Button>
-                        </div>
-                        {error && <p className="text-red-500">{error}</p>}
-                    </form>
-                </div>
-            </Card>
+                            <button
+                                type="button"
+                                className="absolute right-0 top-0 h-full px-3 z-10"
+                                onClick={togglePasswordVisibility}
+                                aria-label={showPassword ? "Esconder senha" : "Mostrar senha"}
+                            >
+                                {showPassword ? <FaEyeSlash className="h-4 w-4" /> : <FaEye className="h-4 w-4" />}
+                            </button>
+                        </div> 
+                    </div>
+                    <div className="flex flex-col itens-center justify-center py-2 px-16">
+                        <Button size="lg" color="primary" type="submit">Entrar</Button>
+                    </div>
+                    {error && <p className="text-red-500">{error}</p>}
+                </form>
+            </div>
+        </Card>
     );
 }
