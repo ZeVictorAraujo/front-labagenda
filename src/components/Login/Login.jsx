@@ -5,7 +5,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 
 export default function Login() {
-    const [ra, setRa] = useState("");
+    const [rn, setRn] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
 
@@ -19,7 +19,7 @@ export default function Login() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ ra, senha }),
+                body: JSON.stringify({ rn, senha }),
             });
 
             if (response.ok) {
@@ -56,9 +56,9 @@ export default function Login() {
                                 type="text" 
                                 ph="RA" 
                                 id="ra" 
-                                name="ra"
-                                value={ra}
-                                onChange={(e) => setRa(e.target.value)}
+                                name="rn"
+                                value={rn}
+                                onChange={(e) => setRn(e.target.value)}
                             />
                             <Input 
                                 size="normal" 
