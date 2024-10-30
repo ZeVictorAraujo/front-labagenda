@@ -20,6 +20,7 @@ export default function Input({ size = 'normal', type = 'text', ph = 'Digite seu
         type={type}
         placeholder={ph}
         className={input({ size })}
+        required
         />
     );
 }
