@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import { AiOutlineClockCircle } from "react-icons/ai";
 import Button from "../Button/Button"; 
 
 Modal.setAppElement("#root");
@@ -12,6 +11,16 @@ const ReservModal = ({ isOpen, closeModal, selectedDate, saveEvent }) => {
   const [endTime, setEndTime] = useState("");
   const [observations, setObservations] = useState("");
 
+  useEffect(() => {
+    if (isOpen) {
+      setDiscipline("");
+      setLaboratory("");
+      setStartTime("");
+      setEndTime("");
+      setObservations("");
+    }
+  }, [isOpen]);
+
   const handleSave = (e) => {
     e.preventDefault();
     const eventData = {
@@ -21,6 +30,11 @@ const ReservModal = ({ isOpen, closeModal, selectedDate, saveEvent }) => {
       extendedProps: { observations }
     };
     saveEvent(eventData);
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    closeModal();
   };
 
   return (
@@ -97,7 +111,7 @@ const ReservModal = ({ isOpen, closeModal, selectedDate, saveEvent }) => {
         </label>
 
         <div className="flex justify-end mt-4 gap-3">
-          <Button size="normal" color="secondary" onClick={closeModal} type="button">
+          <Button size="normal" color="secondary" onClick={handleCancel} type="button">
             Cancelar
           </Button>
           <Button size="normal" color="primary" type="submit" className="ml-3">
