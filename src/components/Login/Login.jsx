@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "../Card/Card";
 import Logo from "../Logo/Logo";
 import Input from "../Input/Input";
@@ -10,6 +11,7 @@ export default function Login() {
     const [senha, setSenha] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword)
@@ -28,6 +30,9 @@ export default function Login() {
                 body: JSON.stringify({ rn, senha }),
             });
 
+            /*
+                Comentado para quando foi integrar com JWT Token
+
             if (response.ok) {
                 const data = await response.json();
                 // Armazene o token de autenticação (se houver)
@@ -35,7 +40,9 @@ export default function Login() {
                 // Redirecione ou atualize a interface conforme necessário
             } else {
                 setError("Usuário ou senha incorretos");
-            }
+            }*/ 
+
+            navigate("/home");
         } catch (error) {
             console.error("Erro na requisição:", error);
             setError("Erro no servidor. Tente novamente mais tarde.");
@@ -55,7 +62,7 @@ export default function Login() {
                     </div>
                 </div>
                 {/* Formulario de Login */}
-                <form action="POST" className="flex flex-col itens-center justify-center">
+                <form onSubmit={handleSubmit} className="flex flex-col itens-center justify-center">
                     <div className="flex flex-col itens-center justify-center py-2 px-16 gap-4">
                         <Input 
                             size="normal" 
