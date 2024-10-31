@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import Logo from "../Logo/Logo";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 export default function Login() {
     const [rn, setRn] = useState("");
@@ -82,7 +82,7 @@ export default function Login() {
                                 onClick={togglePasswordVisibility}
                                 aria-label={showPassword ? "Esconder senha" : "Mostrar senha"}
                             >
-                                {showPassword ? <FaEyeSlash className="h-4 w-4" /> : <FaEye className="h-4 w-4" />}
+                                {showPassword ? <IoMdEyeOff size={20} className="hover:text-blue-800 duration-100" /> : <IoMdEye size={20} className="hover:text-blue-800 duration-100"/>}
                             </button>
                         </div> 
                     </div>
