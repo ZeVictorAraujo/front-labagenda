@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants';
 export default function Input({ size = 'normal', type = 'text', ph = 'Digite seu Nome' }) {
 
     const input = tv({
-        base: 'bg-gray-50 border border-gray-300 rounded',
+        base: 'w-full bg-gray-50 border border-gray-300 rounded',
         variants: {
           size: {
             normal: 'px-5 py-2',
@@ -20,6 +20,7 @@ export default function Input({ size = 'normal', type = 'text', ph = 'Digite seu
         type={type}
         placeholder={ph}
         className={input({ size })}
+        required
         />
     );
 }
