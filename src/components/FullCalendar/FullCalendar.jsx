@@ -4,6 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import Modal from "react-modal";
 import ReservModal from "../Modal/Modal";
+import brLocale from '@fullcalendar/core/locales/pt-br'
 
 Modal.setAppElement("#root");
 
@@ -30,7 +31,7 @@ const Calendar = () => {
   };
 
   const closeViewModal = () => {
-    console.log("Fechando o modal de visualização...");
+
     setIsViewModalOpen(false);
     setSelectedEvent(null);
   };
@@ -40,8 +41,6 @@ const Calendar = () => {
     closeModal();
   };
 
-  console.log("Estado de isViewModalOpen:", isViewModalOpen);
-
   return (
     <div className="relative">
       <FullCalendar
@@ -50,6 +49,13 @@ const Calendar = () => {
         dateClick={(info) => openModal(info.dateStr)}
         events={events}
         eventClick={(info) => openViewModal(info.event)}
+        locale = {brLocale}
+        dayHeaderFormat={{ weekday: 'short' }}
+        titleFormat={{ month: 'long', year: 'numeric' }}
+        height={800}
+        weight={400}
+        dayMaxEventRows={3}
+        mouseEnterInfo={true}
       />
 
       {/* Modal para registrar Reservas */}
